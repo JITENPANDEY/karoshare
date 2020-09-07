@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
         });
         //response -> download link
         const response = await file.save();
-        res.json({ file: `${process.env.APP_BASE_URL}files/${response.uuid}` });
+        res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` });
         //e.g-> http://localhost:3000/files/3211dcfdscf-41654cdccdds
     });
 });
@@ -75,7 +75,7 @@ router.post('/send', async (req,res) => {
         text: `${emailFrom} sent you a file`,
         html: require('../services/emailTemplate')({ 
             emailFrom: emailFrom,
-            downloadLink: `${process.env.APP_BASE_URL}files/${file.uuid}`,
+            downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}`,
             size: parseInt(file.size/1000) + 'KB',
             expires:'24 hours'
         }) // recieve a function
