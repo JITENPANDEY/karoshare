@@ -18,8 +18,6 @@ let upload = multer({
 }).single('myfile'); //100mb
 
 router.post('/', (req, res) => {
-
-
     //store files in upload folders
     upload(req, res, async (err) => {
         //validate requests
