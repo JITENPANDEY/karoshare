@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
         });
         //response -> download link
         const response = await file.save();
-        res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` });
+        res.json({ file: `${process.env.APP_BASE_URL}files/${response.uuid}` });
         //e.g-> http://localhost:3000/files/3211dcfdscf-41654cdccdds
     });
 });
