@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 // Cors 
 const corsOptions = {
-    origin:['http://localhost:3300','https://karoshare.herokuapp.com']
+    origin: 'http://localhost:3000'
     // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 
@@ -24,15 +24,15 @@ const connectDB = require('./config/db')
 connectDB();
 
 //template Engine
-app.set('views',path.join(__dirname,'/views'))
-app.set('view engine','ejs');
+app.set('views', path.join(__dirname, '/views'))
+app.set('view engine', 'ejs');
 
 app.use(express.json());
 
 //Routes
-app.use('/api/files',require('./routes/files.js'))
-app.use('/files',require('./routes/show.js'))
-app.use('/files/download',require('./routes/download.js'))
+app.use('/api/files', require('./routes/files.js'))
+app.use('/files', require('./routes/show.js'))
+app.use('/files/download', require('./routes/download.js'))
 
 app.listen(PORT, () => {
     console.log("listening on PORT: ", PORT)
