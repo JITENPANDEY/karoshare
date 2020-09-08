@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 // Cors 
 const corsOptions = {
-    origin: 'http://localhost:3000'
+    origin: ['http://localhost:3000', 'https://karo-share.herokuapp.com']
     // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 
