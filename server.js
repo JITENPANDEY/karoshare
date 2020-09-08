@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 // Cors 
 const corsOptions = {
-    origin:['http://localhost:3000','https://karoshare.herokuapp.com']
+    origin:['http://localhost:3300','https://karoshare.herokuapp.com']
     // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 
@@ -29,10 +29,6 @@ app.set('view engine','ejs');
 
 app.use(express.json());
 
-
-app.get('/', (req, res) => {
-    res.render('home')
-})
 //Routes
 app.use('/api/files',require('./routes/files.js'))
 app.use('/files',require('./routes/show.js'))
